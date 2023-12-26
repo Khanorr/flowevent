@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @band_patch %>
+
+<div>
+  <%= link_to "Edit this band patch", edit_band_patch_path(@band_patch) %> |
+  <%= link_to "Back to band patches", band_patches_path %>
+
+  <%= button_to "Destroy this band patch", @band_patch, method: :delete %>
+</div>

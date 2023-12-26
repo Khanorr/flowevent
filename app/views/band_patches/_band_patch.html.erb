@@ -1,0 +1,26 @@
+<div id="<%= dom_id band_patch %>">
+  <td>
+    <%= band_patch.channel_number %>
+  </td>
+
+  <td>
+    <%= band_patch.channel_name %>
+  </td>
+
+  <td>
+    <%= band_patch.microphone %>
+  </td>
+
+  <td>
+    <%= band_patch.phantom %>
+  </td>
+
+  <td>
+    <%= band_patch.provided %>
+  </td>
+
+  <td>
+    <%= link_to "Edit", edit_band_patch_path(band_patch.id) %>
+  </td>
+
+</div>

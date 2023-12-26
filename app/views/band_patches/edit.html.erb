@@ -1,0 +1,10 @@
+<h1>Editing band patch</h1>
+
+<%= render "form", band_patch: @band_patch %>
+
+<br>
+
+<div>
+  <%= link_to "Back to band patches", band_patches_path %>
+  <%= button_to "Destroy this band patch", @band_patch, method: :delete %>
+</div>

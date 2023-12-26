@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Band patches</h1>
+
+<div id="band_patches">
+  <table>
+    <tr>
+      <th>Channel #</th>
+      <th>Channel Name</th>
+      <th>Type</th>
+      <th>Phantom</th>
+      <th>Provided</th>
+      <th>Edit
+    </tr>
+      <% @band_patches.each do |band_patch| %>
+        <tr>
+        <%= render band_patch %>
+        </tr>
+      <% end %>
+  </table>
+</div>
+
+<%= link_to "Add Line", new_band_patch_path %>

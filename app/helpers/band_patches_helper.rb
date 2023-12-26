@@ -1,0 +1,2 @@
+module BandPatchesHelper
+end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :band_patches
+  resources :band_riders
   resources :events
   resources :bands
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_26_000116) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_26_110816) do
+  create_table "band_patches", force: :cascade do |t|
+    t.integer "band_rider_id", null: false
+    t.integer "channel_number"
+    t.string "channel_name"
+    t.string "microphone"
+    t.boolean "phantom"
+    t.boolean "provided"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_rider_id"], name: "index_band_patches_on_band_rider_id"
+  end
+
+  create_table "band_riders", force: :cascade do |t|
+    t.integer "band_id", null: false
+    t.string "name"
+    t.integer "version"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_id"], name: "index_band_riders_on_band_id"
+  end
+
   create_table "bands", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -23,4 +44,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_26_000116) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "band_patches", "band_riders"
+  add_foreign_key "band_riders", "bands"
 end

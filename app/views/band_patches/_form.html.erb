@@ -1,0 +1,47 @@
+<%= form_with(model: band_patch) do |form| %>
+  <% if band_patch.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(band_patch.errors.count, "error") %> prohibited this band_patch from being saved:</h2>
+
+      <ul>
+        <% band_patch.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :band_rider_id, style: "display: block" %>
+    <%= form.collection_select :band_rider_id, BandRider.all, :id, :name, prompt: true; %>
+  </div>
+
+  <div>
+    <%= form.label :channel_number, style: "display: block" %>
+    <%= form.number_field :channel_number %>
+  </div>
+
+  <div>
+    <%= form.label :channel_name, style: "display: block" %>
+    <%= form.text_field :channel_name %>
+  </div>
+
+  <div>
+    <%= form.label :microphone, style: "display: block" %>
+    <%= form.text_field :microphone %>
+  </div>
+
+  <div>
+    <%= form.label :phantom, style: "display: block" %>
+    <%= form.check_box :phantom %>
+  </div>
+
+  <div>
+    <%= form.label :provided, style: "display: block" %>
+    <%= form.check_box :provided %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
